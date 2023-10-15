@@ -1,6 +1,20 @@
 
 
 const AddCoffee = () => {
+
+    const handleAddCoffee = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const quantity = e.target.quantity.value;
+        const supplier = e.target.supplier.value;
+        const taste = e.target.taste.value;
+        const category = e.target.category.value;
+        const details = e.target.details.value;
+        const photo = e.target.photo.value;
+        
+        const newCoffee = { name, quantity, supplier, taste, category, details, photo }
+        console.log(newCoffee);
+    }
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h2 className="text-3xl font-extrabold">Add a Coffee</h2>
@@ -73,7 +87,7 @@ const AddCoffee = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Coffee" className="btn btn-block" />
+                <input type="submit" value="Add Coffee" className="btn btn-block bg-gray-700 text-white hover:text-black" />
 
             </form>
         </div>
