@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const CoffeeCard = ( { coffee } ) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees } ) => {
 
     
-    const { _id, name, quantity, supplier, taste, photo, details } = coffee;
+    const { _id, name, quantity, supplier, taste, photo, details } = coffee || {} ;
 
     const handleDelete = id => {
         console.log(id);
@@ -30,6 +31,8 @@ const CoffeeCard = ( { coffee } ) => {
                             'Your Coffee has been deleted.',
                             'success'
                         )
+                        const remainCoffees = coffees.filter( cof => cof._id !== _id)
+                        setCoffees(remainCoffees);
                     }
                 })
             }
@@ -50,7 +53,7 @@ const CoffeeCard = ( { coffee } ) => {
                 <div className="card-actions justify-end">
                     <div className="btn-group btn-group-vertical space-y-4">
                         <button className="btn">View</button>
-                        <Link to={`updateCoffee/${_id}`}>
+                        <Link to={`updatecoffee/${_id}`}>
                             <button className="btn">Edit</button>
                         </Link>
                         <button
