@@ -14,6 +14,19 @@ const SignUp = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res.user);
+                const user = {email, password}
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers:{
+                        'content-type' : 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+
             })
             .catch(err => {
                 console.log(err.message);
