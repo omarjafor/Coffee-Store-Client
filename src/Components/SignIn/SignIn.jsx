@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const SignIn = () => {
@@ -8,8 +10,8 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        
     }
-
 
     return (
         <div>
