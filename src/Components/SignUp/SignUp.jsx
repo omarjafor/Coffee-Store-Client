@@ -14,7 +14,9 @@ const SignUp = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res.user);
-                const user = {email, password}
+                const createdAt = res.user?.metadata?.creationTime;
+                const lastLoggedIn = res.user?.metadata?.lastSignInTime;
+                const user = {email, createdAt, lastLoggedIn, password}
                 fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers:{
