@@ -6,6 +6,8 @@ import Home from './Home';
 import AddCoffee from './Components/AddCoffee';
 import UpdateCoffee from './Components/UpdateCoffee';
 import SignIn from './Components/SignIn/SignIn';
+import SignUp from './Components/SignUp/SignUp';
+import AuthProvider from './Provider/AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -26,12 +28,18 @@ const router = createBrowserRouter([
   {
     path: '/signin',
     element: <SignIn></SignIn>
+  },
+  {
+    path: '/signup',
+    element: <SignUp></SignUp>
   }
 ]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
