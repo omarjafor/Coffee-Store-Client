@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import { createContext, useState } from "react";
 import auth from "../Firebase/firebase.config";
@@ -5,7 +6,7 @@ import auth from "../Firebase/firebase.config";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ( {children} ) => {
-    const [user, setUser] = useState(null);
+    
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
@@ -17,7 +18,7 @@ const AuthProvider = ( {children} ) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-    const userInfo = { user, loading, createUser, signInUser}
+    const userInfo = { loading, createUser, signInUser}
 
 
     return (
