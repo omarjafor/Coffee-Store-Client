@@ -17,7 +17,7 @@ const SignUp = () => {
                 const createdAt = res.user?.metadata?.creationTime;
                 const lastLoggedIn = res.user?.metadata?.lastSignInTime;
                 const user = {email, createdAt, lastLoggedIn, password}
-                fetch('http://localhost:5000/user', {
+                fetch('https://coffee-store-server-3yjy0edit-omarjafor.vercel.app/user', {
                     method: 'POST',
                     headers:{
                         'content-type' : 'application/json'
