@@ -40,7 +40,7 @@ const Managers = () => {
                     </thead>
                     <tbody className="list-decimal">
                         {
-                            managers.map((manage, index) => <tr key={manage._id}>
+                            managers?.map((manage, index) => <tr key={manage._id}>
                                 <th>{index+1}</th>
                                 <td>{manage.name}</td>
                                 <td>{manage.email}</td>
