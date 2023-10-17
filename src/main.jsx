@@ -10,6 +10,7 @@ import SignUp from './Components/SignUp/SignUp';
 import AuthProvider from './Provider/AuthProvider';
 import Users from './Components/Users';
 import AddManager from './Components/Managers/AddManager';
+import Managers from './Components/Managers/Managers';
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
   {
     path: '/addmanager',
     element: <AddManager></AddManager>
+  },
+  {
+    path: '/managers',
+    element: <Managers></Managers>,
+    loader: () => fetch('http://localhost:5000/managers')
   }
 ]);
 
