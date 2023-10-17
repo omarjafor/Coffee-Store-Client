@@ -17,7 +17,7 @@ const UpdateManager = () => {
 
         const updatedManager = { name, email, password, salary, date, details, photo }
 
-        fetch(`http://localhost:5000/managers/${_id}`, {
+        fetch(`https://coffee-store-server-n715s62ht-omarjafor.vercel.app/managers/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

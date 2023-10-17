@@ -8,7 +8,7 @@ const Managers = () => {
     const [managers, setManagers] = useState(managersLoaded);
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/managers/${id}`, {
+        fetch(`https://coffee-store-server-n715s62ht-omarjafor.vercel.app/managers/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

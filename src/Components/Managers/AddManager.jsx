@@ -14,7 +14,7 @@ const AddManager = () => {
 
         const manager = { name, email, password, salary, date, details, photo }
 
-        fetch('http://localhost:5000/managers', {
+        fetch('https://coffee-store-server-n715s62ht-omarjafor.vercel.app/managers', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
