@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const UpdateManager = () => {
     const manager = useLoaderData();
-    const { name, email, password, salary, date, details, photo } = manager;
+    const { _id, name, email, password, salary, date, details, photo } = manager;
 
     const handleUpdateManager = e => {
         e.preventDefault();
@@ -16,7 +16,14 @@ const UpdateManager = () => {
         const photo = e.target.photo.value;
 
         const updatedManager = { name, email, password, salary, date, details, photo }
-        console.log(updatedManager);
+
+        fetch(`http://localhost:5000/managers/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(updatedManager)
+        })
 
     }
 
