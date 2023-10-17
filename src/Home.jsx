@@ -16,7 +16,7 @@ const Home = () => {
             <h2 className="text-2xl font-bold">Total Coffee in the Menus : {coffees.length} </h2>
             <div className="grid md:grid-cols-2 gap-6 my-10">
                 {
-                    coffees.map(coffee => <CoffeeCard
+                    coffees?.map(coffee => <CoffeeCard
                     key={coffee._id}
                     coffee={coffee}
                         coffees={coffees}

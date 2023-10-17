@@ -9,6 +9,7 @@ import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import AuthProvider from './Provider/AuthProvider';
 import Users from './Components/Users';
+import AddManager from './Components/Managers/AddManager';
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
     path: '/users',
     element: <Users></Users>,
     loader: () => fetch('https://coffee-store-server-3yjy0edit-omarjafor.vercel.app/user')
+  },
+  {
+    path: '/addmanager',
+    element: <AddManager></AddManager>
   }
 ]);
 
