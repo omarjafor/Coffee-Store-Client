@@ -11,6 +11,7 @@ import AuthProvider from './Provider/AuthProvider';
 import Users from './Components/Users';
 import AddManager from './Components/Managers/AddManager';
 import Managers from './Components/Managers/Managers';
+import UpdateManager from './Components/Managers/UpdateManager';
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,12 @@ const router = createBrowserRouter([
     path: '/managers',
     element: <Managers></Managers>,
     loader: () => fetch('http://localhost:5000/managers')
+  },
+  {
+    path: '/updatemanager/:id',
+    element: <UpdateManager></UpdateManager>,
+    loader: ({ params }) => fetch(`http://localhost:5000/managers/${params.id}`)
+
   }
 ]);
 

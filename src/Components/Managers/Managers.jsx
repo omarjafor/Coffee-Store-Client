@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const Managers = () => {
@@ -48,6 +48,9 @@ const Managers = () => {
                                 <td>{manage.salary}</td>
                                 <td>{manage.date}</td>
                                 <td>
+                                    <Link to={`/updatemanager/${manage._id}`}>
+                                        <button className="btn">Edit</button>
+                                    </Link>
                                     <button
                                         onClick={() => handleDelete(manage._id)} className="btn">X</button>
                                 </td>
