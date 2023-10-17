@@ -1,14 +1,26 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 
 const Managers = () => {
 
-    const managers = useLoaderData();
+    const managersLoaded = useLoaderData();
+    const [managers, setManagers] = useState(managersLoaded);
 
     const handleDelete = id => {
-        console.log(id);
+        fetch(`http://localhost:5000/managers/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                console.log('deleted successfully');
+                const remaining = managers.filter(mng => mng._id !== id);
+                setManagers(remaining);
+            }
+        })
     }
-    
+
     return (
         <div>
             <h2>Users: {managers.length}</h2>
@@ -28,8 +40,8 @@ const Managers = () => {
                     </thead>
                     <tbody className="list-decimal">
                         {
-                            managers.map(manage => <tr key={manage._id}>
-                                <th>1</th>
+                            managers.map((manage, index) => <tr key={manage._id}>
+                                <th>{index+1}</th>
                                 <td>{manage.name}</td>
                                 <td>{manage.email}</td>
                                 <td>{manage.password}</td>
