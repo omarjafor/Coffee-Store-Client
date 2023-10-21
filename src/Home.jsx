@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 
 const Home = () => {
     
+    const loadedCoffees = useLoaderData();
     const [coffees, setCoffees] = useState(loadedCoffees);
 
     return (
