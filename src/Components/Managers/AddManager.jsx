@@ -9,7 +9,6 @@ const AddManager = () => {
         const password = e.target.password.value;
         const salary = e.target.salary.value;
         const date = e.target.date.value;
-        const details = e.target.details.value;
 
         const manager = { name, email, password, salary, date, details, photo }
 
