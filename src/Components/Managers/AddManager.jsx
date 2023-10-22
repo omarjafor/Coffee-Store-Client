@@ -5,7 +5,7 @@ const AddManager = () => {
     const handleAddManager = e => {
         e.preventDefault();
         const name = e.target.name.value;
-        
+        const email = e.target.email.value;
 
         const manager = { name, email, password, salary, date, details, photo }
 
