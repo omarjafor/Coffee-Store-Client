@@ -10,6 +10,8 @@ const UpdateManager = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const salary = e.target.salary.value;
+        const date = e.target.date.value;
 
         const updatedManager = { name, email, password, salary, date, details, photo }
 
