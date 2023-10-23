@@ -12,6 +12,7 @@ const AddManager = () => {
         const details = e.target.details.value;
         const photo = e.target.photo.value;
 
+        const manager = { name, email, password, salary, date, details, photo }
 
         fetch('https://coffee-store-server-n715s62ht-omarjafor.vercel.app/managers', {
             method: 'POST',
