@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 
-
 const UpdateManager = () => {
     const manager = useLoaderData();
     const { _id, name, email, password, salary, date, details, photo } = manager;
@@ -28,7 +27,6 @@ const UpdateManager = () => {
         .then(data => {
             console.log(data);
         })
-
     }
 
     return (
