@@ -30,7 +30,12 @@ const UpdateCoffee = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount > 0) {
-                    
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
     }
