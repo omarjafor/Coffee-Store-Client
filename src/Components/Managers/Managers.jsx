@@ -5,7 +5,6 @@ import { Link, useLoaderData } from "react-router-dom";
 const Managers = () => {
 
     const managersLoaded = useLoaderData();
-    const [managers, setManagers] = useState(managersLoaded);
 
     const handleDelete = id => {
         fetch(`https://coffee-store-server-n715s62ht-omarjafor.vercel.app/managers/${id}`, {
