@@ -24,6 +24,9 @@ const UpdateManager = () => {
             body: JSON.stringify(updatedManager)
         })
         .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
 
     return (
