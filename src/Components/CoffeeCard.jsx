@@ -15,9 +15,6 @@ const CoffeeCard = ({ coffee, coffees, setCoffees } ) => {
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`https://coffee-store-server-n715s62ht-omarjafor.vercel.app/coffee/${_id}`, {
