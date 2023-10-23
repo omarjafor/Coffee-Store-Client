@@ -21,10 +21,6 @@ const router = createBrowserRouter([
     loader: () => fetch('https://coffee-store-server-n715s62ht-omarjafor.vercel.app/coffee')
   },
   {
-    path: '/addcoffee',
-    element: <AddCoffee></AddCoffee>
-  },
-  {
     path: '/updatecoffee/:id',
     element: <UpdateCoffee></UpdateCoffee>,
     loader: ({ params }) => fetch(`https://coffee-store-server-n715s62ht-omarjafor.vercel.app/coffee/${params.id}`)
