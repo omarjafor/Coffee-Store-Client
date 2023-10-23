@@ -15,11 +15,7 @@ import UpdateManager from './Components/Managers/UpdateManager';
 
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home></Home>,
-    loader: () => fetch('https://coffee-store-server-n715s62ht-omarjafor.vercel.app/coffee')
-  },
+  
   {
     path: '/addcoffee',
     element: <AddCoffee></AddCoffee>
